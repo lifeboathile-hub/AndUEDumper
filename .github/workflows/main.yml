@@ -11,7 +11,7 @@ jobs:
         with:
           submodules: recursive
       
-      - name: Build with CMake
+      - name: Build
         run: |
           cmake -B build \
             -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_LATEST_HOME/build/cmake/android.toolchain.cmake \
@@ -25,7 +25,3 @@ jobs:
         with:
           name: anduedumper-bin
           path: build/AndUEDumper
-
-        with:
-          name: anduedumper-apk
-          path: app/build/outputs/apk/release/*.apk
